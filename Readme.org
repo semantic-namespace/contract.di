@@ -1,0 +1,12 @@
+* semantic-namespace/contract.di
+
+
+** clojars info
+https://clojars.org/com.github.semantic-namespace/contract.di
+
+** usage
+https://github.com/semantic-namespace/contract.di/blob/main/test/semantic_namespace/contract/di/system_test.clj
+
+** License
+
+https://opensource.org/licenses/MIT
