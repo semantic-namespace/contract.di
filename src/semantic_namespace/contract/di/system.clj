@@ -19,10 +19,8 @@
 
 (defn init [& [config]]
   (let [system* (atom {})
-        components (contract.type/instances :semantic-namespace.di/component)
-        contracts (mapv (fn [k]
-
-                          (contract/fetch :semantic-namespace.di/component k)) components)
+        components (contract.type/instances #{:semantic-namespace.di/component})
+        contracts (mapv contract/fetch components)
         _        (def contracts contracts)
 
         _        (def components components)

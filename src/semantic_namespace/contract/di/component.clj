@@ -10,7 +10,7 @@
 (s/def :di.component/identity qualified-keyword?) ;; public component identity
 (s/def :di.component/deps (s/coll-of qualified-keyword?))
 
-(contract.type/def :semantic-namespace.di/component
+(contract.type/def #{:semantic-namespace.di/component}
   [:di.component/identity :di.component/deps :di.component/init-handler :di.component/halt-handler])
 
 (defn init [component-spec system]
