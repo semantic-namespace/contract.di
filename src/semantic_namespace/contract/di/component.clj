@@ -1,9 +1,6 @@
 (ns semantic-namespace.contract.di.component
   (:require [clojure.spec.alpha :as s]
-            [semantic-namespace.contract :as contract]
             [semantic-namespace.contract.type :as contract.type]))
-
-(defonce registry (atom {}))
 
 (s/def :di.component/init-handler fn?)
 (s/def :di.component/halt-handler fn?)

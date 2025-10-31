@@ -4,8 +4,6 @@
             [semantic-namespace.contract :as contract]
             [semantic-namespace.contract.di.component :as system.component]))
 
-
-
 #_(defn reset!* []
   (reset! system.component/registry {}))
 #_(mapv #(let [initialised (system.component/init % {})
@@ -21,9 +19,6 @@
   (let [system* (atom {})
         components (contract.type/instances #{:semantic-namespace.di/component})
         contracts (mapv contract/fetch components)
-        _        (def contracts contracts)
-
-        _        (def components components)
         system (->> contracts
                     (reduce
                      (fn [graph component-contract]
@@ -34,7 +29,6 @@
                         graph
                         (:di.component/deps component-contract)))
                      (dep/graph)))
-;;        _        (def system system)
         system-components-sorted (filter
                                   (partial contains? (set (mapv :di.component/identity contracts)))
                                   (dep/topo-sort system))]
@@ -46,7 +40,6 @@
                 (assoc s (:di.component/identity component-spec) initialised-component))) {}
 
             system-components-sorted)))
-
 
 (defn halt [& [config]]
   ;; check if ::services.component/halt exists then call it
