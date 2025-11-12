@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [com.github.semantic-namespace/contract "0.1.1-SNAPSHOT"]
                  [com.github.semantic-namespace/contract.docs "0.1.1-SNAPSHOT"]
+                 [com.github.semantic-namespace/contract.axiom "0.1.1-SNAPSHOT"]
                  [com.github.semantic-namespace/compound-identity "0.1.1-SNAPSHOT"]]
   :deploy-repositories [["clojars" {:url "https://repo.clojars.org"
                                     :creds :gpg}]]
